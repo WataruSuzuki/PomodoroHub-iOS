@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC6D3A9824D7C69A000D3AA0 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6D3A9324D7C69A000D3AA0 /* String+Localized.swift */; };
+		CC6D3A9924D7C69A000D3AA0 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6D3A9324D7C69A000D3AA0 /* String+Localized.swift */; };
+		CC6D3AA124D7C9EF000D3AA0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CC6D3AA424D7C9EF000D3AA0 /* Localizable.strings */; };
+		CC6D3AA224D7C9EF000D3AA0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CC6D3AA424D7C9EF000D3AA0 /* Localizable.strings */; };
+		CC6D3AA724D7D323000D3AA0 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6D3AA624D7D323000D3AA0 /* SessionView.swift */; };
 		CC76771A24D54111001CC2EF /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76771924D54111001CC2EF /* Tests_iOS.swift */; };
 		CC76772524D54111001CC2EF /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76772424D54111001CC2EF /* Tests_macOS.swift */; };
 		CC76772724D54111001CC2EF /* PomodoroHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7676FE24D5410F001CC2EF /* PomodoroHubApp.swift */; };
@@ -15,6 +20,7 @@
 		CC76772A24D54111001CC2EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7676FF24D5410F001CC2EF /* ContentView.swift */; };
 		CC76772B24D54111001CC2EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC76770024D54111001CC2EF /* Assets.xcassets */; };
 		CC76772C24D54111001CC2EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC76770024D54111001CC2EF /* Assets.xcassets */; };
+		CC76773D24D7A165001CC2EF /* TopMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76773C24D7A165001CC2EF /* TopMenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CC6D3A9324D7C69A000D3AA0 /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		CC6D3AA324D7C9EF000D3AA0 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CC6D3AA524D7C9F7000D3AA0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CC6D3AA624D7D323000D3AA0 /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
 		CC7676FE24D5410F001CC2EF /* PomodoroHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroHubApp.swift; sourceTree = "<group>"; };
 		CC7676FF24D5410F001CC2EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CC76770024D54111001CC2EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +59,7 @@
 		CC76772024D54111001CC2EF /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC76772424D54111001CC2EF /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		CC76772624D54111001CC2EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC76773C24D7A165001CC2EF /* TopMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +94,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC6D3A9024D7C646000D3AA0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CC6D3A9124D7C69A000D3AA0 /* String */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CC6D3A9124D7C69A000D3AA0 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				CC6D3A9324D7C69A000D3AA0 /* String+Localized.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
 		CC7676F824D5410F001CC2EF = {
 			isa = PBXGroup;
 			children = (
@@ -100,7 +127,10 @@
 			children = (
 				CC7676FE24D5410F001CC2EF /* PomodoroHubApp.swift */,
 				CC7676FF24D5410F001CC2EF /* ContentView.swift */,
+				CC76773B24D7A02B001CC2EF /* Views */,
+				CC6D3A9024D7C646000D3AA0 /* Extensions */,
 				CC76770024D54111001CC2EF /* Assets.xcassets */,
+				CC6D3AA424D7C9EF000D3AA0 /* Localizable.strings */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -149,6 +179,15 @@
 				CC76772624D54111001CC2EF /* Info.plist */,
 			);
 			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		CC76773B24D7A02B001CC2EF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CC76773C24D7A165001CC2EF /* TopMenuView.swift */,
+				CC6D3AA624D7D323000D3AA0 /* SessionView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +295,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = CC7676F824D5410F001CC2EF;
 			productRefGroup = CC76770624D54111001CC2EF /* Products */;
@@ -276,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC76772B24D54111001CC2EF /* Assets.xcassets in Resources */,
+				CC6D3AA124D7C9EF000D3AA0 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC76772C24D54111001CC2EF /* Assets.xcassets in Resources */,
+				CC6D3AA224D7C9EF000D3AA0 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,8 +350,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC76773D24D7A165001CC2EF /* TopMenuView.swift in Sources */,
+				CC6D3AA724D7D323000D3AA0 /* SessionView.swift in Sources */,
 				CC76772924D54111001CC2EF /* ContentView.swift in Sources */,
 				CC76772724D54111001CC2EF /* PomodoroHubApp.swift in Sources */,
+				CC6D3A9824D7C69A000D3AA0 /* String+Localized.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +364,7 @@
 			files = (
 				CC76772A24D54111001CC2EF /* ContentView.swift in Sources */,
 				CC76772824D54111001CC2EF /* PomodoroHubApp.swift in Sources */,
+				CC6D3A9924D7C69A000D3AA0 /* String+Localized.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +398,18 @@
 			targetProxy = CC76772124D54111001CC2EF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CC6D3AA424D7C9EF000D3AA0 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CC6D3AA324D7C9EF000D3AA0 /* ja */,
+				CC6D3AA524D7C9F7000D3AA0 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CC76772D24D54111001CC2EF /* Debug */ = {

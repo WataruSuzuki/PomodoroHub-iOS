@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  PomodoroHub
+
+  Created by 鈴木航 on 2020/08/03.
+  
+*/
+tasks = "タスク";
+session = "セッション";
+activities = "アクティビティ";
+settings = "設定";
