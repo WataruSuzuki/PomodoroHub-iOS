@@ -5,8 +5,20 @@
   Created by 鈴木航 on 2020/08/03.
   
 */
+review_excellent = "excellent";
+review_good = "good";
+review_bad = "bad";
+review_suck = "suck";
+
 tasks = "tasks";
 session = "session";
 activities = "activities";
 settings = "settings";
      
+caution = "caution";
+cancel = "cancel";
+interruption = "interruption";
+review = "review";
+
+msg_confirm_interruption = "Interrupt this Pomodoro?";
+msg_review = "Did you focus on this Pomodoro?";

@@ -5,7 +5,20 @@
   Created by 鈴木航 on 2020/08/03.
   
 */
+review_excellent = "最高";
+review_good = "いい感じ";
+review_bad = "ちょっとダメ";
+review_suck = "最悪です";
+
 tasks = "タスク";
 session = "セッション";
 activities = "アクティビティ";
 settings = "設定";
+
+caution = "警告";
+cancel = "キャンセル";
+interruption = "中断";
+review = "レビュー";
+
+msg_confirm_interruption = "このポモドーロを中断しますか？";
+msg_review = "このポモドーロは集中できましたか？";

@@ -8,13 +8,36 @@
 import SwiftUI
 
 struct SessionView: View {
+    @ObservedObject var viewModel = SessionViewModel()
+    
     var body: some View {
-        Text(TopMenus.session.describing)
-    }
+        NavigationView {
+            GeometryReader { navigation in
+                if navigation.size.width > navigation.size.height {
+                    HStack {
+                        TimerView(viewModel: viewModel)
+                        ControlPanelView(viewModel: viewModel)
+                            .padding()
+                    }
+                } else {
+                    VStack {
+                        TimerView(viewModel: viewModel)
+                        ControlPanelView(viewModel: viewModel)
+                            .padding()
+                    }
+                }
+            }
+            .navigationTitle(TopMenus.session.describing.localized)
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
+    }    
 }
 
 struct SessionView_Previews: PreviewProvider {
     static var previews: some View {
-        SessionView()
+        Group {
+            SessionView()
+            SessionView().previewLayout(.fixed(width: UIScreen.main.bounds.height, height: UIScreen.main.bounds.width))
+        }
     }
 }

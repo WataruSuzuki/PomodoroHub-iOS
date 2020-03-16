@@ -1,0 +1,3 @@
+[submodule "modules/SwiftExtensionChimaera"]
+	path = modules/SwiftExtensionChimaera
+	url = https://github.com/WataruSuzuki/SwiftExtensionChimaera.git

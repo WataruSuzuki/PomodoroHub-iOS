@@ -15,3 +15,6 @@ struct PomodoroHubApp: App {
         }
     }
 }
+
+let pomodoroTechFocusTime = 25.0 * 60.0 // 25:00
+let pomodoroTechShortBreakTime = 5.0 * 60.0 // 05:00
