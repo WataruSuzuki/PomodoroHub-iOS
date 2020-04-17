@@ -20,5 +20,7 @@ cancel = "cancel";
 interruption = "interruption";
 review = "review";
 
+addTask = "Add task";
+
 msg_confirm_interruption = "Interrupt this Pomodoro?";
 msg_review = "Did you focus on this Pomodoro?";

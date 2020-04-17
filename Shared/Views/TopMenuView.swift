@@ -11,15 +11,15 @@ struct TopMenuView: View {
     
     var body: some View {
         TabView {
-            Text(TopMenus.tasks.describing)
-                .tabItem {
-                    Image(systemName: "list.number")
-                    Text(TopMenus.tasks.describing.localized)
-                }
             SessionView()
                 .tabItem {
                     Image(systemName: "timer")
                     Text(TopMenus.session.describing.localized)
+                }
+            TasksView()
+                .tabItem {
+                    Image(systemName: "list.number")
+                    Text(TopMenus.tasks.describing.localized)
                 }
             Text(TopMenus.activities.describing)
                 .tabItem {
@@ -36,8 +36,8 @@ struct TopMenuView: View {
 }
 
 enum TopMenus: Int, CaseIterable {
-    case tasks = 0,
-         session,
+    case session = 0,
+         tasks,
          activities,
          settings
     

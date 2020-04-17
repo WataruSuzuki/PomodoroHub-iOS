@@ -27,7 +27,7 @@ struct SessionView: View {
                     }
                 }
             }
-            .navigationTitle(TopMenus.session.describing.localized)
+            .navigationBarTitle(TopMenus.session.describing.localized)
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }    

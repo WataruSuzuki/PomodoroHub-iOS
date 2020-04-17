@@ -20,5 +20,7 @@ cancel = "キャンセル";
 interruption = "中断";
 review = "レビュー";
 
+addTask = "タスクを追加";
+
 msg_confirm_interruption = "このポモドーロを中断しますか？";
 msg_review = "このポモドーロは集中できましたか？";
