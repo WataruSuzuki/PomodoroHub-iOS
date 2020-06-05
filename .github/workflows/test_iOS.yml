@@ -22,13 +22,12 @@ jobs:
 
     - name: Change xcode version
       run: |
-        sudo xcode-select -s '/Applications/Xcode_12_beta.app/Contents/Developer'
+        sudo xcode-select -s '/Applications/Xcode_12.app/Contents/Developer'
 
     - name: Check environment
       run: |
         xcodebuild -version
-        instruments -s device
-    # xcrun xctrace list devices
+        xcrun xctrace list devices
 
     - name: Run tests (iOS)
       run: xcodebuild test -scheme "PomodoroHub (iOS)" -destination 'platform=iOS Simulator,name=iPod touch (7th generation)'
