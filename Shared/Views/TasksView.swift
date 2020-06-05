@@ -9,7 +9,8 @@ import SwiftUI
 
 struct TasksView: View {
     @ObservedObject var activities = ActivitiesViewModel()
-    
+    @ObservedObject var router = TaskRouter()
+
     var body: some View {
         NavigationView {
             List {
@@ -25,21 +26,23 @@ struct TasksView: View {
             .navigationBarItems(
                 trailing:
                     Button(action: {
-                        activities.isAddingNewTask = true
+                        router.sheet = .addingNewTask
                     }) {
                         Image(systemName: "plus")
                     }
-            ).sheet(isPresented: $activities.isAddingNewTask, onDismiss: {
-                activities.isAddingNewTask = false
-            }, content: {
-                AddingTaskView(activities: activities)
-            })
+            ).sheet(item: $router.sheet) { item in
+                switch item {
+                case .addingNewTask:
+                    AddingTaskView(activities: activities)
+                        .environmentObject(router)
+                }
+            }
         }
     }
 }
 
 struct TasksView_Previews: PreviewProvider {
     static var previews: some View {
-        TasksView()
+        TasksView().environmentObject(TaskRouter())
     }
 }

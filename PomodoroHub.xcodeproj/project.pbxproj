@@ -31,6 +31,8 @@
 		CC76772B24D54111001CC2EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC76770024D54111001CC2EF /* Assets.xcassets */; };
 		CC76772C24D54111001CC2EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC76770024D54111001CC2EF /* Assets.xcassets */; };
 		CC76773D24D7A165001CC2EF /* TopMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76773C24D7A165001CC2EF /* TopMenuView.swift */; };
+		CC84425F251DBD8000D9B419 /* CurrentWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC84425E251DBD8000D9B419 /* CurrentWorker.swift */; };
+		CC844279251DD3DF00D9B419 /* TaskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC844278251DD3DF00D9B419 /* TaskRouter.swift */; };
 		CC95384D2518829400AA45FF /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC95384C2518829400AA45FF /* TaskViewModel.swift */; };
 		CCAA44F924DC38D50036F6E2 /* ReviewingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA44F824DC38D50036F6E2 /* ReviewingView.swift */; };
 		CCAA457A24DC461F0036F6E2 /* Date+FormatterStr.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA455724DC461F0036F6E2 /* Date+FormatterStr.swift */; };
@@ -51,6 +53,7 @@
 		CCAA459524DC461F0036F6E2 /* String+Capture.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA456924DC461F0036F6E2 /* String+Capture.swift */; };
 		CCB2D1E324E573B5000E542A /* TextEditorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2D1E224E573B5000E542A /* TextEditorRow.swift */; };
 		CCB2D1E524E573DE000E542A /* TextRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2D1E424E573DE000E542A /* TextRow.swift */; };
+		CCC19F1B251DE77F00DFE897 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC19F1A251DE77F00DFE897 /* Router.swift */; };
 		CCEB306D24D808950081454B /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEB306C24D808950081454B /* TimerView.swift */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +106,8 @@
 		CC76772424D54111001CC2EF /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		CC76772624D54111001CC2EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC76773C24D7A165001CC2EF /* TopMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuView.swift; sourceTree = "<group>"; };
+		CC84425E251DBD8000D9B419 /* CurrentWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWorker.swift; sourceTree = "<group>"; };
+		CC844278251DD3DF00D9B419 /* TaskRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRouter.swift; sourceTree = "<group>"; };
 		CC95384C2518829400AA45FF /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		CCAA44F824DC38D50036F6E2 /* ReviewingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewingView.swift; sourceTree = "<group>"; };
 		CCAA455724DC461F0036F6E2 /* Date+FormatterStr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+FormatterStr.swift"; sourceTree = "<group>"; };
@@ -115,6 +120,7 @@
 		CCAA456924DC461F0036F6E2 /* String+Capture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Capture.swift"; sourceTree = "<group>"; };
 		CCB2D1E224E573B5000E542A /* TextEditorRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorRow.swift; sourceTree = "<group>"; };
 		CCB2D1E424E573DE000E542A /* TextRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRow.swift; sourceTree = "<group>"; };
+		CCC19F1A251DE77F00DFE897 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		CCEB306C24D808950081454B /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,6 +218,7 @@
 				CC7676FE24D5410F001CC2EF /* PomodoroHubApp.swift */,
 				CC7676FF24D5410F001CC2EF /* ContentView.swift */,
 				CC76773B24D7A02B001CC2EF /* Views */,
+				CC84425D251DBCF400D9B419 /* Environments */,
 				CC72B05324DABBB000F4E465 /* ViewModels */,
 				CC06672D24DD40C500364407 /* Models */,
 				CC76770024D54111001CC2EF /* Assets.xcassets */,
@@ -279,6 +286,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		CC84425D251DBCF400D9B419 /* Environments */ = {
+			isa = PBXGroup;
+			children = (
+				CC84425E251DBD8000D9B419 /* CurrentWorker.swift */,
+				CCC19F19251DE73E00DFE897 /* Router */,
+			);
+			path = Environments;
+			sourceTree = "<group>";
+		};
 		CCAA454B24DC461F0036F6E2 /* SwiftExtensionChimaera */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,6 +343,15 @@
 				CCAA44F824DC38D50036F6E2 /* ReviewingView.swift */,
 			);
 			path = Session;
+			sourceTree = "<group>";
+		};
+		CCC19F19251DE73E00DFE897 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CCC19F1A251DE77F00DFE897 /* Router.swift */,
+				CC844278251DD3DF00D9B419 /* TaskRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -494,6 +519,7 @@
 				CC76773D24D7A165001CC2EF /* TopMenuView.swift in Sources */,
 				CCAA459224DC461F0036F6E2 /* String+DateFormat.swift in Sources */,
 				CC0667A124E2CBC800364407 /* TextFieldRow.swift in Sources */,
+				CCC19F1B251DE77F00DFE897 /* Router.swift in Sources */,
 				CC0667A324E2D16400364407 /* AddingTaskView.swift in Sources */,
 				CCAA459024DC461F0036F6E2 /* String+Camelized.swift in Sources */,
 				CC72B05524DABF2F00F4E465 /* SessionViewModel.swift in Sources */,
@@ -510,7 +536,9 @@
 				CCAA459424DC461F0036F6E2 /* String+Capture.swift in Sources */,
 				CCAA457A24DC461F0036F6E2 /* Date+FormatterStr.swift in Sources */,
 				CCAA44F924DC38D50036F6E2 /* ReviewingView.swift in Sources */,
+				CC844279251DD3DF00D9B419 /* TaskRouter.swift in Sources */,
 				CC76772924D54111001CC2EF /* ContentView.swift in Sources */,
+				CC84425F251DBD8000D9B419 /* CurrentWorker.swift in Sources */,
 				CC0667A524E2D3F000364407 /* TaskDetailsView.swift in Sources */,
 				CC76772724D54111001CC2EF /* PomodoroHubApp.swift in Sources */,
 				CCAA458E24DC461F0036F6E2 /* String+Localized.swift in Sources */,

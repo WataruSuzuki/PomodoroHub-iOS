@@ -9,9 +9,12 @@ import SwiftUI
 
 struct TaskDetailsView: View {
     @Environment(\.editMode) var mode
+    @EnvironmentObject var router: Router
+    @EnvironmentObject var currentWorker: CurrentWorker
     @ObservedObject var activities: ActivitiesViewModel
     @ObservedObject var task: TaskViewModel
-    
+    @State private var askOverwrite = false
+
     var body: some View {
         let isEditing = mode?.wrappedValue.isEditing ?? false
         ZStack {
@@ -22,6 +25,16 @@ struct TaskDetailsView: View {
                 isEditing: .constant(isEditing),
                 task: task
             )
+            .alert(isPresented: $askOverwrite, content: {
+                Alert(
+                    title: Text("(・A・)"),
+                    message: Text("msg_interrupt_current_session".localized),
+                    primaryButton: .cancel(Text("cancel".localized)),
+                    secondaryButton: .destructive(Text("DoIt".localized), action: {
+                        startNewSession()
+                    })
+                )
+            })
             .onReceive(mode.publisher, perform: { _ in
                 if let editMode = mode?.wrappedValue, editMode == .inactive {
                     activities.update(task: task)
@@ -30,7 +43,11 @@ struct TaskDetailsView: View {
             VStack {
                 Spacer()
                 Button(action: {
-                    
+                    guard !currentWorker.task.valid else {
+                        askOverwrite = true
+                        return
+                    }
+                    startNewSession()
                 }) {
                     Text("Start working")
                         .foregroundColor(Color.white)
@@ -55,6 +72,14 @@ struct TaskDetailsView: View {
             allSummaries.removeFirst()
             return allSummaries
         }
+    }
+    
+    private func startNewSession() {
+        currentWorker.task = task
+        currentWorker.title = task.title
+        currentWorker.session = SessionViewModel()
+        currentWorker.session.state = .play
+        router.menu = TopMenus.session
     }
 }
 

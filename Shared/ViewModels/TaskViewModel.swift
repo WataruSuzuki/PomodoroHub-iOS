@@ -16,10 +16,15 @@ class TaskViewModel: ObservableObject {
     init(task: Task? = nil) {
         if let task = task {
             id = task.id ?? UUID()
-            title = task.title ?? "???"
-            taskDescription = task.taskDescription ?? "???"
+            title = task.title ?? ""
+            taskDescription = task.taskDescription ?? ""
         } else {
             id = UUID()
         }
+    }
+    
+    private static let unknown = ""
+    var valid: Bool {
+        get { return !title.isEmpty }
     }
 }

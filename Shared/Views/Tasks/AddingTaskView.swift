@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct AddingTaskView: View {
+    @EnvironmentObject var router: TaskRouter
     @ObservedObject var activities: ActivitiesViewModel
     @ObservedObject var newTask = TaskViewModel()
+    @State private var notValidInput = false
     
     var body: some View {
         NavigationView {
@@ -19,17 +21,26 @@ struct AddingTaskView: View {
                 details: .constant(editableDetails),
                 isEditing: .constant(true), task: newTask
             )
+            .alert(isPresented: $notValidInput) {
+                Alert(title: Text("msg_must_input_title".localized))
+            }
             .navigationBarItems(
-                    leading: Button(action: {
-                        activities.isAddingNewTask = false
-                    }) {
-                        Image(systemName: "xmark")
-                    },
-                    trailing: Button(action: {
+                leading: Button(action: {
+                    router.sheet = nil
+                }) {
+                    Image(systemName: "xmark")
+                },
+                trailing: Button(action: {
+                    if newTask.valid {
                         activities.addNewOne(task: newTask)
-                    }) {
-                        Image(systemName: "checkmark")
-                    })
+                        router.sheet = nil
+                    } else {
+                        notValidInput = true
+                    }
+                }) {
+                    Image(systemName: "checkmark")
+                }
+            )
         }.navigationViewStyle(StackNavigationViewStyle())
     }
     

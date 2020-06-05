@@ -24,3 +24,5 @@ addTask = "タスクを追加";
 
 msg_confirm_interruption = "このポモドーロを中断しますか？";
 msg_review = "このポモドーロは集中できましたか？";
+msg_must_input_title = "タイトルが入力されていません";
+msg_interrupt_current_session = "実行中のセッションを中断してよろしいですか?";

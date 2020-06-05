@@ -24,3 +24,5 @@ addTask = "Add task";
 
 msg_confirm_interruption = "Interrupt this Pomodoro?";
 msg_review = "Did you focus on this Pomodoro?";
+msg_must_input_title = "Must input title";
+msg_interrupt_current_session = "Interrupt current session?";

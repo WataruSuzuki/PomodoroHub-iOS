@@ -8,30 +8,49 @@
 import SwiftUI
 
 struct TopMenuView: View {
+    @ObservedObject private var currentWorker = CurrentWorker()
+    @ObservedObject private var router = Router()
+
+    var body: some View {
+        TabView(selection: $router.menu) {
+            Menu(
+                menu: TopMenus.session,
+                dependencyView: AnyView(SessionView())
+            )
+            Menu(
+                menu: TopMenus.tasks,
+                dependencyView: AnyView(TasksView())
+            )
+            Menu(
+                menu: TopMenus.activities,
+                dependencyView: AnyView(Text(TopMenus.activities.describing))
+            )
+            Menu(
+                menu: TopMenus.settings,
+                dependencyView: AnyView(Text(TopMenus.settings.describing))
+            )
+        }
+        .environmentObject(router)
+        .environmentObject(currentWorker)
+        .environmentObject(currentWorker.session)
+        .environmentObject(currentWorker.task)
+    }
+}
+
+private struct Menu: View {
+    var menu: TopMenus
+    var dependencyView: AnyView
+    @EnvironmentObject var router: Router
     
     var body: some View {
-        TabView {
-            SessionView()
-                .tabItem {
-                    Image(systemName: "timer")
-                    Text(TopMenus.session.describing.localized)
-                }
-            TasksView()
-                .tabItem {
-                    Image(systemName: "list.number")
-                    Text(TopMenus.tasks.describing.localized)
-                }
-            Text(TopMenus.activities.describing)
-                .tabItem {
-                    Image(systemName: "chart.bar")
-                    Text(TopMenus.activities.describing.localized)
-                }
-            Text(TopMenus.settings.describing)
-                .tabItem {
-                    Image(systemName: "gear")
-                    Text(TopMenus.settings.describing.localized)
-                }
+        dependencyView.tabItem {
+            Image(systemName: menu.imageName)
+                .onTapGesture(perform: {
+                    router.menu = menu
+                })
+            Text(menu.describing.localized)
         }
+        .tag(menu)
     }
 }
 
@@ -44,6 +63,17 @@ enum TopMenus: Int, CaseIterable {
     var describing: String {
         get {
             return String(describing: self)
+        }
+    }
+    
+    var imageName: String {
+        get {
+            switch self {
+            case .session: return "timer"
+            case .tasks: return "list.number"
+            case .activities: return "chart.bar"
+            case .settings: return "gear"
+            }
         }
     }
 }

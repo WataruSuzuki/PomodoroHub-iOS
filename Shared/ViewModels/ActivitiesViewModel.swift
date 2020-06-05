@@ -9,7 +9,6 @@ import Foundation
 import Combine
 
 class ActivitiesViewModel: ObservableObject {
-    @Published var isAddingNewTask = false
     @Published var tasks: [Task] = ActivitiesModel.shared.allTasks()
     
     func addNewOne(task: TaskViewModel) {
@@ -23,7 +22,6 @@ class ActivitiesViewModel: ObservableObject {
         ActivitiesModel.shared.insert(obj: newTask)
 
         sync()
-        isAddingNewTask = false
     }
     
     private func sync() {

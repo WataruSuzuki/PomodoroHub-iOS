@@ -8,38 +8,38 @@
 import SwiftUI
 
 struct ControlPanelView: View {
-    @ObservedObject var viewModel: SessionViewModel
+    @ObservedObject var session: SessionViewModel
     
     var body: some View {
         HStack {
             Spacer()
             Button(action: {
-                viewModel.interruption = true
+                session.interruption = true
             }, label: {
                 Image(systemName: "xmark.circle")
                     .resizable()
                     .frame(width: 44, height: 44, alignment: .center)
                     .foregroundColor(.red)
             })
-            .alert(isPresented: $viewModel.interruption) {
+            .alert(isPresented: $session.interruption) {
                 Alert(title: Text("caution".localized),
                       message: Text("msg_confirm_interruption".localized),
                       primaryButton: .cancel(
                         Text("cancel".localized), action: {
-                            viewModel.interruption = false
+                            session.interruption = false
                         }),
                       secondaryButton: .destructive(
                         Text("interruption".localized), action: {
-                            viewModel.interruption = false
+                            session.interruption = false
                         }))
             }
             Spacer()
             Button(action: {
-                viewModel.state = viewModel.state == .play
+                session.state = session.state == .play
                     ? .pause
                     : .play
             }, label: {
-                Image(systemName: viewModel.state == .play
+                Image(systemName: session.state == .play
                         ? "pause.circle"
                         : "play.circle")
                     .resizable()
@@ -48,15 +48,15 @@ struct ControlPanelView: View {
             })
             Spacer()
             Button(action: {
-                viewModel.state = .complete
+                session.state = .complete
             }, label: {
                 Image(systemName: "checkmark.circle")
                     .resizable()
                     .frame(width: 44, height: 44, alignment: .center)
                     .foregroundColor(.green)
             })
-            .sheet(isPresented: $viewModel.reviewing, onDismiss: {}, content: {
-                ReviewingView(viewModel: viewModel)
+            .sheet(isPresented: $session.reviewing, onDismiss: {}, content: {
+                ReviewingView(viewModel: session)
             })
             Spacer()
         }
@@ -67,6 +67,6 @@ struct ControlPanelView: View {
 
 struct SessionControlPanelView_Previews: PreviewProvider {
     static var previews: some View {
-        ControlPanelView(viewModel: SessionViewModel())
+        ControlPanelView(session: SessionViewModel())
     }
 }
