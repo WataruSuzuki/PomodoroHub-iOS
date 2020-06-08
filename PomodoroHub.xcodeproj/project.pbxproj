@@ -54,6 +54,7 @@
 		CCB2D1E324E573B5000E542A /* TextEditorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2D1E224E573B5000E542A /* TextEditorRow.swift */; };
 		CCB2D1E524E573DE000E542A /* TextRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2D1E424E573DE000E542A /* TextRow.swift */; };
 		CCC19F1B251DE77F00DFE897 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC19F1A251DE77F00DFE897 /* Router.swift */; };
+		CCDCBDFB25590C2000BBA27C /* ActivitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDCBDFA25590C2000BBA27C /* ActivitiesView.swift */; };
 		CCEB306D24D808950081454B /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEB306C24D808950081454B /* TimerView.swift */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +122,7 @@
 		CCB2D1E224E573B5000E542A /* TextEditorRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorRow.swift; sourceTree = "<group>"; };
 		CCB2D1E424E573DE000E542A /* TextRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRow.swift; sourceTree = "<group>"; };
 		CCC19F1A251DE77F00DFE897 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		CCDCBDFA25590C2000BBA27C /* ActivitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesView.swift; sourceTree = "<group>"; };
 		CCEB306C24D808950081454B /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -282,6 +284,7 @@
 				CCB9157524DAAA4400A50333 /* Session */,
 				CC1A587024DCE78400287E68 /* TasksView.swift */,
 				CC1A587224DCE78D00287E68 /* Tasks */,
+				CCDCBDFA25590C2000BBA27C /* ActivitiesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				CCEB306D24D808950081454B /* TimerView.swift in Sources */,
 				CC06679D24DECC1800364407 /* ActivitiesViewModel.swift in Sources */,
 				CC06679F24DECCF200364407 /* ActivitiesModel+Task.swift in Sources */,
+				CCDCBDFB25590C2000BBA27C /* ActivitiesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,16 +1,16 @@
 //
-//  TasksView.swift
+//  ActivitiesView.swift
 //  PomodoroHub (iOS)
 //
-//  Created by 鈴木航 on 2020/08/07.
+//  Created by 鈴木航 on 2020/11/09.
 //
 
 import SwiftUI
 
-struct TasksView: View {
+struct ActivitiesView: View {
     @ObservedObject var activities = ActivitiesViewModel()
     @ObservedObject var taskRouter = TaskRouter()
-
+    
     var body: some View {
         NavigationView {
             List {
@@ -38,11 +38,5 @@ struct TasksView: View {
                 }
             }
         }
-    }
-}
-
-struct TasksView_Previews: PreviewProvider {
-    static var previews: some View {
-        TasksView().environmentObject(TaskRouter())
     }
 }

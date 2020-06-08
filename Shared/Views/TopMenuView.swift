@@ -23,7 +23,7 @@ struct TopMenuView: View {
             )
             Menu(
                 menu: TopMenus.activities,
-                dependencyView: AnyView(Text(TopMenus.activities.describing))
+                dependencyView: AnyView(ActivitiesView())
             )
             Menu(
                 menu: TopMenus.settings,
