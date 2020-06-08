@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct TasksView: View {
-    @ObservedObject var activities = ActivitiesViewModel()
     @ObservedObject var taskRouter = TaskRouter()
+    @EnvironmentObject var activities: ActivitiesViewModel
 
     var body: some View {
         NavigationView {

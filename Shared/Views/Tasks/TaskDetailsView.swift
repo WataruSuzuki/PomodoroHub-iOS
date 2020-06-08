@@ -80,6 +80,8 @@ struct TaskDetailsView: View {
         currentWorker.session = SessionViewModel()
         currentWorker.session.state = .play
         
+        activities.startSession(task: task)
+        
         router.menu = TopMenus.session
     }
 }

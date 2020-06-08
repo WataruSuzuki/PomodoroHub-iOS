@@ -16,16 +16,16 @@ struct TimerView: View {
                 let textSize = min(timer.size.width, timer.size.height) / 4
                 Circle().stroke(Color.green)
                     .padding(.all, 10)
-                Arc(startAngle: .degrees(0), endAngle: .degrees(360.0 / session.countDownTime() * session.countDown), clockwise: true)
+                Arc(startAngle: .degrees(0), endAngle: .degrees(360.0 / session.countDownTime * session.focusTime), clockwise: true)
                     .stroke(Color.green, lineWidth: 10)
                     .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, 10)
                 HStack {
-                    Text(formatted(time: session.countDown, unit: .minute))
+                    Text(formatted(time: session.focusTime, unit: .minute))
                         .font(.system(size: textSize))
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
                     Text(":")
                         .font(.system(size: textSize))
-                    Text(formatted(time: session.countDown, unit: .second))
+                    Text(formatted(time: session.focusTime, unit: .second))
                         .font(.system(size: textSize))
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                 }

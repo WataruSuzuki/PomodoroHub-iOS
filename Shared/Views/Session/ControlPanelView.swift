@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ControlPanelView: View {
+    @ObservedObject var current: CurrentWorker
     @ObservedObject var session: SessionViewModel
+    @ObservedObject var activities: ActivitiesViewModel
     
     var body: some View {
         HStack {
@@ -35,9 +37,12 @@ struct ControlPanelView: View {
             }
             Spacer()
             Button(action: {
-                session.state = session.state == .play
-                    ? .pause
-                    : .play
+                if session.state == .play {
+                    session.state = .pause
+                    //activities.stopSession(task: )
+                } else {
+                    session.state = .play
+                }
             }, label: {
                 Image(systemName: session.state == .play
                         ? "pause.circle"
@@ -67,6 +72,10 @@ struct ControlPanelView: View {
 
 struct SessionControlPanelView_Previews: PreviewProvider {
     static var previews: some View {
-        ControlPanelView(session: SessionViewModel())
+        ControlPanelView(
+            current: CurrentWorker(),
+            session: SessionViewModel(),
+            activities: ActivitiesViewModel()
+        )
     }
 }

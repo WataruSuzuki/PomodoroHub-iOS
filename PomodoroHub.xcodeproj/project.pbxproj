@@ -55,6 +55,7 @@
 		CCB2D1E524E573DE000E542A /* TextRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2D1E424E573DE000E542A /* TextRow.swift */; };
 		CCC19F1B251DE77F00DFE897 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC19F1A251DE77F00DFE897 /* Router.swift */; };
 		CCDCBDFB25590C2000BBA27C /* ActivitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDCBDFA25590C2000BBA27C /* ActivitiesView.swift */; };
+		CCDCBE05255929D600BBA27C /* ActivitiesModel+Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDCBE04255929D600BBA27C /* ActivitiesModel+Session.swift */; };
 		CCEB306D24D808950081454B /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEB306C24D808950081454B /* TimerView.swift */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +124,7 @@
 		CCB2D1E424E573DE000E542A /* TextRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRow.swift; sourceTree = "<group>"; };
 		CCC19F1A251DE77F00DFE897 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		CCDCBDFA25590C2000BBA27C /* ActivitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesView.swift; sourceTree = "<group>"; };
+		CCDCBE04255929D600BBA27C /* ActivitiesModel+Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivitiesModel+Session.swift"; sourceTree = "<group>"; };
 		CCEB306C24D808950081454B /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,6 +167,7 @@
 				CC06672E24DD42AC00364407 /* activities.xcdatamodeld */,
 				CC06679A24DEC6A100364407 /* ActivitiesModel.swift */,
 				CC06679E24DECCF200364407 /* ActivitiesModel+Task.swift */,
+				CCDCBE04255929D600BBA27C /* ActivitiesModel+Session.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				CC06679B24DEC6A100364407 /* ActivitiesModel.swift in Sources */,
 				CC06673024DD42AC00364407 /* activities.xcdatamodeld in Sources */,
 				CCAA457C24DC461F0036F6E2 /* Enum+Description.swift in Sources */,
+				CCDCBE05255929D600BBA27C /* ActivitiesModel+Session.swift in Sources */,
 				CCB2D1E524E573DE000E542A /* TextRow.swift in Sources */,
 				CC1A587124DCE78400287E68 /* TasksView.swift in Sources */,
 				CC6D3AA724D7D323000D3AA0 /* SessionView.swift in Sources */,

@@ -8,35 +8,18 @@
 import SwiftUI
 
 struct ActivitiesView: View {
-    @ObservedObject var activities = ActivitiesViewModel()
     @ObservedObject var taskRouter = TaskRouter()
+    @EnvironmentObject var activities: ActivitiesViewModel
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(self.activities.tasks) { task in
-                    let viewModel = TaskViewModel(task: task)
-                    let destination = TaskDetailsView(activities: activities, task: viewModel)
-                    NavigationLink(destination: destination) {
-                        Text(viewModel.title)
-                    }
+                ForEach(self.activities.sessions) { session in
+                    let task = TaskViewModel(task: session.ofTask)
+                    Text(task.title)
                 }
             }
-            .navigationBarTitle(TopMenus.tasks.describing.localized)
-            .navigationBarItems(
-                trailing:
-                    Button(action: {
-                        taskRouter.sheet = .addingNewTask
-                    }) {
-                        Image(systemName: "plus")
-                    }
-            ).sheet(item: $taskRouter.sheet) { item in
-                switch item {
-                case .addingNewTask:
-                    AddingTaskView(activities: activities)
-                        .environmentObject(taskRouter)
-                }
-            }
+            .navigationBarTitle(TopMenus.activities.describing.localized)
         }
     }
 }

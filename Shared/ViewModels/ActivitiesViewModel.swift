@@ -9,7 +9,39 @@ import Foundation
 import Combine
 
 class ActivitiesViewModel: ObservableObject {
+    @Published var sessions: [Session] = ActivitiesModel.shared.allSessions()
     @Published var tasks: [Task] = ActivitiesModel.shared.allTasks()
+    
+    private var activeSession: Session?
+    
+    func startSession(task: TaskViewModel) {
+        guard let existTask = validate(task: task) else {
+            return
+        }
+        guard activeSession == nil else {
+            print("Session has already started...")
+            return
+        }
+        let session = ActivitiesModel.shared.generateSessionObj()
+        session.start = Date()
+        //session.ofTask = existTask
+        ActivitiesModel.shared.insert(obj: session)
+        ActivitiesModel.shared.save()
+        
+        activeSession = session
+    }
+    
+    func stopSession(task: TaskViewModel) {
+        guard let existSession = activeSession else {
+            print("No active session found...")
+            return
+        }
+        existSession.end = Date()
+        ActivitiesModel.shared.insert(obj: existSession)
+        ActivitiesModel.shared.save()
+        
+        activeSession = nil
+    }
     
     func addNewOne(task: TaskViewModel) {
         let newTask = ActivitiesModel.shared.generateTaskObj()
@@ -21,17 +53,24 @@ class ActivitiesViewModel: ObservableObject {
         newTask.id = UUID()
         ActivitiesModel.shared.insert(obj: newTask)
 
-        sync()
+        syncTasks()
     }
     
-    private func sync() {
+    private func syncTasks() {
         ActivitiesModel.shared.save()
         tasks = ActivitiesModel.shared.allTasks()
     }
     
-    func update(task: TaskViewModel) {
+    private func validate(task: TaskViewModel) -> Task? {
         guard let existTask = ActivitiesModel.shared.fetchTaskObj(id: task.id) else {
             print("Does not exist \(task.id)")
+            return nil
+        }
+        return existTask
+    }
+    
+    func update(task: TaskViewModel) {
+        guard let existTask = validate(task: task) else {
             return
         }
         guard existTask.title != task.title
@@ -43,6 +82,6 @@ class ActivitiesViewModel: ObservableObject {
         existTask.taskDescription = task.taskDescription
         existTask.updated_at = Date()
         
-        sync()
+        syncTasks()
     }
 }

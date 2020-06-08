@@ -9,14 +9,15 @@ import Foundation
 import Combine
 
 class SessionViewModel: ObservableObject {
-    @Published var countDown = pomodoroTechFocusTime
+    @Published var focusTime = pomodoroTechFocusTime
     @Published var phase = SessionPhase.firstFocus
     @Published var state = SessionState.idle {
         didSet {
+            registerEntryPoint(state: state)
             if state == .complete, let nextPhase = SessionPhase(rawValue: phase.rawValue + 1) {
                 phase = nextPhase
                 state = .idle
-                countDown = countDownTime(phase: nextPhase)
+                focusTime = countDownTime(phase: nextPhase)
                 reviewing = true
             }
         }
@@ -26,22 +27,25 @@ class SessionViewModel: ObservableObject {
     private lazy var timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
         guard self.state == .play && !self.interruption else { return }
         
-        self.countDown -= 1.0
-        if self.countDown <= 0.0 {
+        self.focusTime -= 1.0
+        if self.focusTime <= 0.0 {
             self.state = .complete
         }
+    }
+    var countDownTime: Double {
+        get { return countDownTime(phase: phase) }
     }
     
     init() {
         timer.fire()
     }
     
-    func countDownTime() -> Double {
-        return countDownTime(phase: phase)
-    }
-    
     private func countDownTime(phase: SessionPhase) -> Double {
         return phase.rawValue / 2 == 0 ? pomodoroTechShortBreakTime : pomodoroTechFocusTime
+    }
+    
+    private func registerEntryPoint(state: SessionState) {
+        
     }
 }
 

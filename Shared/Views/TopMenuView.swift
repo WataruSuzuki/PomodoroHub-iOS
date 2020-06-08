@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct TopMenuView: View {
-    @ObservedObject private var currentWorker = CurrentWorker()
+    @ObservedObject private var current = CurrentWorker()
     @ObservedObject private var router = Router()
+    @ObservedObject private var activities = ActivitiesViewModel()
 
     var body: some View {
         TabView(selection: $router.menu) {
@@ -31,9 +32,10 @@ struct TopMenuView: View {
             )
         }
         .environmentObject(router)
-        .environmentObject(currentWorker)
-        .environmentObject(currentWorker.session)
-        .environmentObject(currentWorker.task)
+        .environmentObject(activities)
+        .environmentObject(current)
+//        .environmentObject(current.session)
+//        .environmentObject(current.task)
     }
 }
 
