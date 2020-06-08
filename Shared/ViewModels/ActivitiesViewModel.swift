@@ -41,6 +41,7 @@ class ActivitiesViewModel: ObservableObject {
         }
         existTask.title = task.title
         existTask.taskDescription = task.taskDescription
+        existTask.updated_at = Date()
         
         sync()
     }

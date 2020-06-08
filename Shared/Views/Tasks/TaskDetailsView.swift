@@ -76,8 +76,10 @@ struct TaskDetailsView: View {
     
     private func startNewSession() {
         currentWorker.task = task
+        
         currentWorker.session = SessionViewModel()
         currentWorker.session.state = .play
+        
         router.menu = TopMenus.session
     }
 }

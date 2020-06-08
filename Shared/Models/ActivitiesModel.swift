@@ -51,7 +51,7 @@ final class ActivitiesModel {
     
     // MARK: - Core Data Command
 
-    func save () {
+    func save() {
         if context.hasChanges {
             do {
                 try context.save()
