@@ -11,5 +11,4 @@ import Combine
 class CurrentWorker: ObservableObject {
     @Published var task = TaskViewModel()
     @Published var session = SessionViewModel()
-    @Published var title = ""
 }
