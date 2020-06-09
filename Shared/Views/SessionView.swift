@@ -18,7 +18,7 @@ struct SessionView: View {
                     HStack {
                         TimerView(session: current.session)
                         ControlPanelView(
-                            current: current,
+                            task: current.task,
                             session: current.session,
                             activities: activities)
                         .padding()
@@ -27,7 +27,7 @@ struct SessionView: View {
                     VStack {
                         TimerView(session: current.session)
                         ControlPanelView(
-                            current: current,
+                            task: current.task,
                             session: current.session,
                             activities: activities)
                         .padding()

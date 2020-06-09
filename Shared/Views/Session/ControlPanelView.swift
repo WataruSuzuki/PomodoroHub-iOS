@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ControlPanelView: View {
-    @ObservedObject var current: CurrentWorker
+    @ObservedObject var task: TaskViewModel
     @ObservedObject var session: SessionViewModel
     @ObservedObject var activities: ActivitiesViewModel
     
@@ -73,7 +73,7 @@ struct ControlPanelView: View {
 struct SessionControlPanelView_Previews: PreviewProvider {
     static var previews: some View {
         ControlPanelView(
-            current: CurrentWorker(),
+            task: TaskViewModel(),
             session: SessionViewModel(),
             activities: ActivitiesViewModel()
         )
